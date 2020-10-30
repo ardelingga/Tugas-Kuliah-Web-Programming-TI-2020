@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Siswa - Ardelingga Pramesta Kusuma</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 16px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 50%;
+            margin: auto;
+            margin-top: 35px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 5px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        select {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 5px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 5px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .btn_daftar {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            width: 100%;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="/aksi.php">
+        <div class="container">
+            <br><br>
+            <h1>Form Pendaftaran Siswa Baru</h1>
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <label><b>Nama Lengkap</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <input type="text" placeholder="Masukan nama" name="nama" id="nama" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>Jenis Kelamin</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="jenis_kelamin" id="laki_laki" value="laki_laki"></td>
+                                <td>Laki-Laki</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="jenis_kelamin" id="perempuan" value="perempuan"></td>
+                                <td>Perempuan</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>Tempat Lahir</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <input type="text" placeholder="Masukan tempat lahir" name="tmp_lahir" id="tmp_lahir" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>Tanggal Lahir</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <input type="date" placeholder="Masukan tanggal lahir" name="tgl_lahir" id="tgl_lahir" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>Email</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <input type="text" placeholder="Masukan email" name="email" id="email" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>No Telepon</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <input type="number" placeholder="Masukan no telepon" name="no_phone" id="no_phone" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>Agama</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <select name="agama" id="agama">
+                            <option value="islam">Islam</option>
+                            <option value="protestan">Protestan</option>
+                            <option value="katolik">Katolik</option>
+                            <option value="hindu">Hindu</option>
+                            <option value="budha">Budha</option>
+                            <option value="konghucu">Konghucu</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>Golongan Darah</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <select name="agama" id="agama">
+                            <option value="a">A</option>
+                            <option value="b">B</option>
+                            <option value="ab">AB</option>
+                            <option value="o">O</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label><b>Alamat Lengkap</b></label>
+                    </td>
+                    <td> : </td>
+                    <td>
+                        <textarea name="alamat" placeholder="Masukan alamat lengkap" id="alamat" cols="30"
+                            rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+            <button type="submit" class="btn_daftar">DAFTAR</button>
+        </div>
+    </form>
+</body>
+
+</html>
