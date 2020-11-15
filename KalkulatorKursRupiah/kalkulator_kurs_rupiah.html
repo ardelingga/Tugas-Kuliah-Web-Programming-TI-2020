@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Kurs Rupiah</title>
+    <style>
+        .tbl_calc_kurs, th, td{
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script>
+        var optionValas;
+        function convertToRupiah(){
+            let tf_amount = Number(document.getElementById("tf_amount").value);
+            if(optionValas == "dollar_us"){
+                let hasil_convert = tf_amount * 9915;
+                document.getElementById("tf_value_rupiah").value = hasil_convert;
+            }else if(optionValas == "dollar_singapore"){
+                let hasil_convert = tf_amount * 13472;
+                document.getElementById("tf_value_rupiah").value = hasil_convert;
+            }else if(optionValas == "ringgit_malaysia"){
+                let hasil_convert = tf_amount * 874;
+                document.getElementById("tf_value_rupiah").value = hasil_convert;
+            }else if(optionValas == "yen_jepan"){
+                let hasil_convert = tf_amount * 120;
+                document.getElementById("tf_value_rupiah").value = hasil_convert;
+            }else if(optionValas == "euro"){
+                let hasil_convert = tf_amount * 15888;
+                document.getElementById("tf_value_rupiah").value = hasil_convert;
+            }else if(optionValas == "riyal_arab_saudi"){
+                let hasil_convert = tf_amount * 3592;
+                document.getElementById("tf_value_rupiah").value = hasil_convert;
+            }else{
+                document.getElementById("tf_value_rupiah").value = "Pilih Valas Terlebih Dahulu";
+            }
+        }
+
+        function changeOptionValas(){
+            let optionSelect = document.getElementById("valas").value;
+            optionValas = optionSelect;
+            convertToRupiah();
+        }
+
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Kalkulator Rupiah - Mata Uang asing</legend>
+        <table class="tbl_calc_kurs">
+            <tr>
+                <th>Masukan Nilai</th>
+                <th>Valas</th>
+                <th>Nilai Rupiah</th>
+            </tr>
+            <tr>
+                <td><input type="number" id="tf_amount" onchange="convertToRupiah()" onkeyup="convertToRupiah()"></td>
+                <td>
+                    <select name="valas" id="valas" onchange="changeOptionValas()">
+                        <option value="option">Pilih Valas</option>
+                        <option value="dollar_us">Dollar US</option>
+                        <option value="dollar_singapore">Dollar Singapore</option>
+                        <option value="ringgit_malaysia">Ringgit Malaysia</option>
+                        <option value="yen_jepan">Yen Japan</option>
+                        <option value="euro">Euro</option>
+                        <option value="riyal_arab_saudi">Riyal Arab Saudi</option>
+                    </select>
+                </td>
+                <td><input type="text" id="tf_value_rupiah" readonly></td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+</html>
